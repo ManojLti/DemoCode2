@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemoCode</name>
+    </assembly>
+    <members>
+        <member name="M:DemoCode.Controllers.EmployeeController.GetEmployee">
+            <summary>
+            Get details of All Employees.
+            </summary>
+            <returns>Peek the details of employee</returns>
+            <remarks> Demo API Get implementation</remarks>
+        </member>
+        <member name="M:DemoCode.Controllers.EmployeeController.AddEmployee(DemoCode.Entities.EmployeeEntity)">
+            <summary>
+            Add new Employee
+            </summary>
+            <param name="emp.name.name">Name of the employee</param>
+            <returns>Peek the details of employee</returns>
+            <remarks> Name should not have more than 20 characters and phone should not have more than 10 char</remarks>
+        </member>
+    </members>
+</doc>
