@@ -34,7 +34,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
- - task: DotNetCoreCLI@2
+ - task: VSPublish@2
   displayName: 'Publish the project - $(buildconfiguration)'
   inputs:
     command: 'publish'
