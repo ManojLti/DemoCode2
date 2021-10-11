@@ -34,16 +34,15 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
- - task: VSPublish@2
-  displayName: 'Publish the project - $(buildconfiguration)'
+# Publish pipeline artifacts
+# Publish (upload) a file or directory as a named artifact for the current run
+- task: PublishPipelineArtifact@1
   inputs:
-    command: 'publish'
-    solution: '$(solution)'
-    
-    publishWebProjects: false
-    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-    zipAfterPublish: true
+    targetPath: '$(Pipeline.Workspace)' # Required 
+    #artifactName: 'drop' # Optional
+    artifactType: 'pipeline' # Required. Options: pipeline, filepath. Default value: pipeline
+    #fileSharePath: '\server\folderName' # Required when artifactType = filepath
+    #parallel: false # Optional. Default value: false
+    #parallelCount: 1 # Optional. Value must be at least 1 and not greater than 128. Default value: 8
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
+
